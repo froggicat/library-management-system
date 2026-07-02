@@ -3,14 +3,6 @@ from services.csv_handling import write_new_row
 class Library():
     def __init__(self):
         self.books = []
-        self.members = []
-
-    def add_member(self, member):
-        self.members.append(member)
-
-    def view_members(self):
-        for member in self.members:
-            print(member)
     
     def add_book(self, book):
         self.books.append(book)
