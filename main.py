@@ -1,11 +1,12 @@
 from services.library import Library
 from models.book import Book
 from models.member import Member
+import csv
 
 library = Library()
 
-#initialise library with a bunch of books and members
-#allow members to sign in + view or borrow or give back books
-#maybe differentiate between staff and regular members
-#where staff members can add or remove both books and regular members
-
+with open("library_books.csv", newline="") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        newBook = Book(row["title"], row["author"])
+        library.add_book(newBook)

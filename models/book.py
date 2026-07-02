@@ -5,4 +5,7 @@ class Book():
         self.available = True
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        if self.available == True:
+            return f"{self.title} by {self.author} is available to borrow."
+        else: 
+            return f"{self.title} by {self.author} has been taken out by someone else."
