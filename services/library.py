@@ -1,3 +1,5 @@
+from services.csv_handling import write_new_row
+
 class Library():
     def __init__(self):
         self.books = []
@@ -12,6 +14,8 @@ class Library():
     
     def add_book(self, book):
         self.books.append(book)
+        write_new_row("library_books.csv", book)
+
 
     def view_books(self):
         if not self.books:
