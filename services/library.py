@@ -19,3 +19,11 @@ class Library():
             return
         for book in self.books:
             print(book)
+
+    def borrow_book(self, book, member):
+        if book.isavailable == False:
+            print("Cannot borrow this book at the moment.")
+        else:
+            member.borrowed_books.append(book)
+            book.isavailable = False
+            print("Book borrowed!")

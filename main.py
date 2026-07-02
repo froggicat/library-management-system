@@ -1,12 +1,7 @@
 from services.library import Library
 from models.book import Book
 from models.member import Member
-import csv
+from services.initialise_books import initialise_books
 
 library = Library()
-
-with open("library_books.csv", newline="") as f:
-    reader = csv.DictReader(f)
-    for row in reader:
-        newBook = Book(row["title"], row["author"])
-        library.add_book(newBook)
+initialise_books(library, "library_books.csv")
