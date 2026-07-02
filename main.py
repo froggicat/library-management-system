@@ -1,6 +1,5 @@
 from services.library import Library
 from models.book import Book
-from models.member import Member
 from services.csv_handling import initialise_books
 
 library = Library()
